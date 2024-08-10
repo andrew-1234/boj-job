@@ -1,0 +1,205 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  width: 80%;
+  max-width: fit-content;
+  margin: auto;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.boxes-sites {
+  /* make look nice and simple with outside border */
+  border: 1px solid #ccc;
+  padding: 10px 0 0 5px;
+  margin: 0 0 10px 0;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+form {
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 5px;
+  margin-top: 0px;
+}
+
+input[type="text"], select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+  
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 5;
+}
+
+button.generate {
+  background-color: #649b68;
+  width: 100%;
+}
+
+button.clear {
+  background: #802b3b;
+  width: auto;
+  margin: 10px 0 0 0;
+}
+
+button.save {
+  background-color: #364780;
+  width: 49%;
+  margin-top: 10px;
+}
+
+button.load {
+  background-color: #4f807d;
+  margin: 10px 0; 
+  width: 49%;
+}
+
+button.clear-favorites {
+  background-color: #802b3b;
+  margin: 10px 0;
+  width: 49%;
+}
+
+button:hover {
+  filter: brightness(85%);
+} 
+
+.general {
+  background: #fff;
+  p {
+    padding: 10px;
+  }
+}
+
+#result {
+  background: #fff;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+#result a {
+  word-wrap: break-word;
+}
+
+#snack  {
+  /* background: #f4f4f4;
+  padding: 10px;
+  margin-top: 20px;
+  text-align: center; */
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snack.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+/* Create two unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+.left {
+  width: 75%;
+}
+
+.right {
+  width: 25%;
+  margin-top: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+.custom-select select {
+  background-color: #333;
+  color: #fff;
+  outline: none; 
+  text-align: center;
+}
+

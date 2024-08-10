@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Search Query Builder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Job Search Query Builder</h1>
+
+    <form id="jobSearchForm">
+      <label for="jobBoards">Job Boards:</label><br>
+      <div id="jobBoards" class="boxes-sites">
+        <input type="checkbox" id="careerone" value="careerone">
+        <label for="careerone">CareerOne</label><br>
+        <input type="checkbox" id="linkedin" value="linkedin">
+        <label for="linkedin">LinkedIn</label><br>
+        <input type="checkbox" id="workforce" value="workforce">
+        <label for="workforce">Workforce</label><br>
+        <input type="checkbox" id="ethical" value="ethical">
+        <label for="ethical">Ethical Jobs</label><br>
+        <input type="checkbox" id="all" value="all">
+        <label for="all">All</label>
+      </div>
+      <div>
+        <label for="location">Location:</label>
+        <input type="text" id="location" placeholder="Australia">
+      </div>
+      <div>
+        <label for="searchTerms">Search Terms (comma separate multiple terms):</label>
+        <input type="text" id="searchTerms" placeholder="software developer">
+      </div>
+      <div>
+        <label for="timeRange">Time Range:</label>
+        <select id="timeRange">
+          <option value="">All Time</option>
+          <option value="tbs=qdr:h">Past Hour</option>
+          <option value="tbs=qdr:w">Past Week</option>
+          <option value="tbs=qdr:m">Past Month</option>
+          <option value="tbs=qdr:y">Past Year</option>
+        </select>
+      </div>
+
+      <button class="generate" type="submit">Generate Search URL</button>
+      <button type="button" class="clear" id="clearSelections">Reset Form</button>
+    </form>
+
+    <div>
+      <p>Click on the "Generate Search URL" button to generate a search URL
+        based on your selections. The URL will be displayed in the "Result"
+        section. You can then click on the URL to open the search results in a
+        new tab.
+        Use the "Clear Selections" button to reset all fields.
+      </p>
+    </div>
+
+
+    <h2>Result</h2>
+    <div id="result"></div>
+
+    <h2>Favorites</h2>
+    <p>Save your favorite searches for easy access. Enter a name for your query and click "Save selections to
+      Favorites". You can then select a favorite from the dropdown and click "Load Favorite" to load the saved
+      selections. Favorites are stored as cookies.</p>
+    <h3>Name Your Query:</h3>
+    <input type="text" id="queryName" placeholder="Enter query name">
+    <button class="save" type="button" id="saveFavorite">Save Fields
+      to Favorites</button>
+
+    <h3>Your Favorite Searches:</h3>
+
+    <div class="custom-select">
+      <select id="favoritesSelect">
+        <label for="favoritesSelect">Select Favorite:</label>
+        <option value="">-- Select a favorite --</option>
+      </select>
+    </div>
+    <div class="flex-container">
+
+      <button class="load" type="button" id="loadFavoriteBtn">Load Favorite</button>
+      <button class="clear-favorites" type="button" id="clearFavorites">Clear Favorites</button>
+    </div>
+
+    <div id="snack">message</div>
+    <script src="script.js"></script>
+  </div>
+</body>
+
+</html>
