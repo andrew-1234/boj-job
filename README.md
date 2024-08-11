@@ -8,6 +8,8 @@ Better job searching:
 - Search against multiple job websites (Australia based)
 - Use words and phrases to narrow your search (use commas to add more than one)
 
+There is no 'Seek' search option because the actual job pages aren't indexed. 
+
 Related:
 
 - Idea based on [](https://briansjobsearch.com/)(USA focused)
