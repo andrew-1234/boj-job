@@ -12,4 +12,4 @@ There is no 'Seek' search option because the actual job pages aren't indexed.
 
 Related:
 
-- Idea based on [](https://briansjobsearch.com/)(USA focused)
+- Idea based on https://briansjobsearch.com/ (a USA focused tool)
