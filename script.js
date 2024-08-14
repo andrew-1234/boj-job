@@ -179,3 +179,8 @@ function snack(message) {
     x.className = x.className.replace("show", "");
   }, 3000);
 }
+
+function scrolldiv() {
+  var elem = document.getElementById("result");
+  elem.scrollIntoView({ block: "end" });
+}
