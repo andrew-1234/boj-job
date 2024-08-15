@@ -1,11 +1,29 @@
+/* Global Variables */
+:root {
+  --primary-color: #333;
+  --secondary-color: #802b3b;
+  --accent-color: #649b68;
+  --background-color: #f4f4f4;
+  --text-color: #fff;
+  --border-color: #ccc;
+  --border-radius: 4px;
+  --padding: 10px;
+  --transition-speed: 0.3s;
+}
+
+/* Base Reset */
+* {
+  box-sizing: border-box;
+}
+
+/* Body Styles */
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
+  background-color: var(--background-color);
 }
 
+/* Container */
 .container {
   width: 80%;
   max-width: fit-content;
@@ -14,22 +32,49 @@ body {
   padding: 20px;
 }
 
-.boxes-sites {
-  /* make look nice and simple with outside border */
-  border: 1px solid #ccc;
-  padding: 10px 0 0 5px;
-  margin: 0 0 10px 0;
+/* Header Styles */
+header {
+  padding: var(--padding) 0;
 }
 
+header a {
+  margin-right: 20px;
+  color: black;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+header a:hover {
+  color: #007bff;
+}
+
+.fab {
+  font-size: x-large;
+  padding: 0;
+  margin-right: 10px;
+}
+
+/* Typography */
 h1 {
-  color: #333;
+  color: var(--primary-color);
   text-align: center;
 }
 
+/* Responsive Typography */
+@media screen and (max-width: 500px) {
+  h1, h2, h3, h4 {
+    font-size: 1.1em;
+  }
+}
+
+/* Form Styles */
 form {
   background: #fff;
-  padding: 10px;
+  padding: var(--padding);
   margin-bottom: 20px;
+  border-radius: var(--border-radius);
 }
 
 form div {
@@ -39,118 +84,114 @@ form div {
 label {
   display: inline-block;
   margin-bottom: 5px;
-  margin-top: 0px;
 }
 
 input[type="text"], select {
   width: 100%;
   padding: 8px;
-  border: 1px solid #ccc;
-  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-  box-sizing: border-box;         /* Opera/IE 8+ */
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
 }
 
-  
+/* Custom Select */
+.custom-select select {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  outline: none;
+  text-align: center;
+  border-radius: var(--border-radius);
+}
+
+/* Button Styles */
 button {
   display: block;
   width: 100%;
-  padding: 10px;
-  background: #333;
-  color: #fff;
+  padding: var(--padding);
+  background: var(--primary-color);
+  color: var(--text-color);
   border: none;
+  border-radius: var(--border-radius);
   cursor: pointer;
-}
-
-.flex-container {
-  display: flex;
-  justify-content: space-between;
-  padding: 0;
-  margin: 5;
-}
-
-button.generate {
-  background-color: #649b68;
-  width: 100%;
-}
-
-button.clear {
-  background: #802b3b;
-  width: auto;
-  margin: 10px 0 0 0;
-}
-
-button.save {
-  background-color: #364780;
-  width: 49%;
-  margin-top: 10px;
-}
-
-button.load {
-  background-color: #4f807d;
-  margin: 10px 0; 
-  width: 49%;
-}
-
-button.clear-favorites {
-  background-color: #802b3b;
-  margin: 10px 0;
-  width: 49%;
+  transition: filter var(--transition-speed) ease;
 }
 
 button:hover {
   filter: brightness(85%);
-} 
-
-.general {
-  background: #fff;
-  p {
-    padding: 10px;
-  }
 }
 
+button.generate {
+  background-color: var(--accent-color);
+}
+
+button.clear {
+  background-color: var(--secondary-color);
+  width: auto;
+  margin-top: 10px;
+}
+
+button.save, button.load, button.clear-favorites {
+  width: 49%;
+  margin-top: 10px;
+}
+
+button.save {
+  background-color: #364780;
+}
+
+button.load {
+  background-color: #4f807d;
+}
+
+button.clear-favorites {
+  background-color: var(--secondary-color);
+}
+
+/* Flex Container */
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  padding: 0;
+}
+
+/* Boxes and Sites */
+.boxes-sites {
+  border: 1px solid var(--border-color);
+  padding: 10px 5px 0;
+  margin-bottom: 10px;
+}
+
+/* Result Section */
 #result {
-  background: #fff;
-  padding: 20px;
-  margin-top: 20px;
+  background: var(--text-color);
+  padding: 0 5px 5px 5px;
+  border-radius: var(--border-radius);
 }
 
 #result a {
   word-wrap: break-word;
 }
 
-#snack  {
-  /* background: #f4f4f4;
-  padding: 10px;
-  margin-top: 20px;
-  text-align: center; */
-  visibility: hidden; /* Hidden by default. Visible on click */
-  min-width: 250px; /* Set a default minimum width */
-  margin-left: -125px; /* Divide value of min-width by 2 */
-  background-color: #333; /* Black background color */
-  color: #fff; /* White text color */
-  text-align: center; /* Centered text */
-  border-radius: 2px; /* Rounded borders */
-  padding: 16px; /* Padding */
-  position: fixed; /* Sit on top of the screen */
-  z-index: 1; /* Add a z-index if needed */
-  left: 50%; /* Center the snackbar */
-  bottom: 30px; /* 30px from the bottom */
+/* Snackbar */
+#snack {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  transition: visibility var(--transition-speed) ease, opacity var(--transition-speed) ease;
 }
 
-/* Show the snackbar when clicking on a button (class added with JavaScript) */
 #snack.show {
-  visibility: visible; /* Show the snackbar */
-  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
-  However, delay the fade out process for 2.5 seconds */
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  visibility: visible;
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
-
-/* Animations to fade the snackbar in and out */
-@-webkit-keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
 }
 
 @keyframes fadein {
@@ -158,20 +199,15 @@ button:hover {
   to {bottom: 30px; opacity: 1;}
 }
 
-@-webkit-keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
-}
-
 @keyframes fadeout {
   from {bottom: 30px; opacity: 1;}
   to {bottom: 0; opacity: 0;}
 }
 
-/* Create two unequal columns that floats next to each other */
+/* Layout Columns */
 .column {
   float: left;
-  padding: 10px;
+  padding: var(--padding);
 }
 
 .left {
@@ -183,52 +219,9 @@ button:hover {
   margin-top: 10px;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-/* Clear floats after the columns */
-.row:after {
+/* Clearfix for Columns */
+.row::after {
   content: "";
   display: table;
   clear: both;
-}
-
-
-
-.custom-select select {
-  background-color: #333;
-  color: #fff;
-  outline: none; 
-  text-align: center;
-}
-
-/* Make the h1 header smaller on small screens */
-@media screen and (max-width: 500px) {
-  h1, h2, h3, h4 {
-    font-size: 1.1em;
-  }
-}
-
-header {
-  padding: 10px 0;
-}
-
-header a {
-  margin-right: 20px;
-  color: black;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: right;
-}
-
-header a:hover {
-  color: #007bff;
-}
-
-.fab {
- font-size: x-large;
- padding: 0;
- margin-right: 10px;
 }
